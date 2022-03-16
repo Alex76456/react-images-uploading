@@ -38,10 +38,10 @@ export const isResolutionValid = (
 };
 
 export const isImageValid = (fileType: string) => {
-  if (fileType.includes('image')) {
-    return true;
-  }
-  return false;
+  // if (fileType.includes('image')) {
+  //  return true;
+ // }
+  return true;
 };
 
 export const isMaxFileSizeValid = (fileSize, maxFileSize?) => {
