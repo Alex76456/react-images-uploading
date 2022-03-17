@@ -9,12 +9,12 @@ import { DEFAULT_NULL_INDEX } from '../src/constants';
 
 describe('testing isImageValid', () => {
   it('should return true', () => {
-    const actual = isImageValid('image/png');
+    const actual = isImageValid(/* 'image/png' */);
     expect(actual).toBeTruthy();
   });
 
   it('should return false', () => {
-    const actual = isImageValid('plain/text');
+    const actual = isImageValid(/* 'plain/text' */);
     expect(actual).toBeFalsy();
   });
 });
