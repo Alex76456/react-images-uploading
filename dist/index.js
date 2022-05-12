@@ -124,7 +124,7 @@ var ReactImageUploading = function (_a) {
                         fileList: fileList,
                         maxFileSize: maxFileSize,
                         maxNumber: maxNumber,
-                        acceptType: acceptType,
+                        // acceptType,
                         keyUpdate: keyUpdate,
                         resolutionType: resolutionType,
                         resolutionWidth: resolutionWidth,

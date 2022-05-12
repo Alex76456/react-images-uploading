@@ -35,9 +35,10 @@ const ReactImageUploading: React.FC<ImageUploadingPropsType> = ({
   const [errors, setErrors] = useState<ErrorsType>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
-  const handleClickInput = useCallback(() => openFileDialog(inputRef), [
-    inputRef,
-  ]);
+  const handleClickInput = useCallback(
+    () => openFileDialog(inputRef),
+    [inputRef]
+  );
 
   const onImageUpload = useCallback((): void => {
     setKeyUpdate(DEFAULT_NULL_INDEX);
@@ -70,7 +71,7 @@ const ReactImageUploading: React.FC<ImageUploadingPropsType> = ({
       fileList,
       maxFileSize,
       maxNumber,
-      acceptType,
+      // acceptType,
       keyUpdate,
       resolutionType,
       resolutionWidth,
@@ -123,9 +124,10 @@ const ReactImageUploading: React.FC<ImageUploadingPropsType> = ({
     if (inputRef.current) inputRef.current.value = '';
   };
 
-  const acceptTypeString = useMemo(() => getAcceptTypeString(acceptType), [
-    acceptType,
-  ]);
+  const acceptTypeString = useMemo(
+    () => getAcceptTypeString(acceptType),
+    [acceptType]
+  );
 
   const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -184,7 +186,7 @@ const ReactImageUploading: React.FC<ImageUploadingPropsType> = ({
           onDragEnter: handleDragIn,
           onDragLeave: handleDragOut,
           onDragOver: handleDrag,
-          onDragStart:handleDragStart,
+          onDragStart: handleDragStart,
         },
         isDragging,
       })}

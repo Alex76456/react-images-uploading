@@ -48,7 +48,7 @@ export const isMaxFileSizeValid = (fileSize, maxFileSize?) => {
   return maxFileSize ? fileSize <= maxFileSize : true;
 };
 
-export const isAcceptTypeValid = (acceptType, fileName) => {
+export const isAcceptTypeValid = (/* acceptType, fileName */) => {
   // if (acceptType && acceptType.length > 0) {
   //   const type: string = fileName.split('.').pop() || '';
   //   if (
@@ -74,7 +74,7 @@ export const getErrorValidation = async ({
   value,
   maxNumber,
   keyUpdate,
-  acceptType,
+  // acceptType,
   maxFileSize,
   resolutionType,
   resolutionWidth,
@@ -91,7 +91,7 @@ export const getErrorValidation = async ({
       //   newErrors.acceptType = true;
       //   break;
       // }
-      if (!isAcceptTypeValid(acceptType, file.name)) {
+      if (!(isAcceptTypeValid(/* acceptType, file.name */))) {
         newErrors.acceptType = true;
         break;
       }

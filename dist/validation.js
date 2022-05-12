@@ -75,7 +75,7 @@ exports.isResolutionValid = isResolutionValid;
 var isImageValid = function ( /* fileType: string */) {
     // if (fileType.includes('image')) {
     //  return true;
-    // }
+    // } // убираем проверку на картинку
     return true;
 };
 exports.isImageValid = isImageValid;
@@ -83,12 +83,16 @@ var isMaxFileSizeValid = function (fileSize, maxFileSize) {
     return maxFileSize ? fileSize <= maxFileSize : true;
 };
 exports.isMaxFileSizeValid = isMaxFileSizeValid;
-var isAcceptTypeValid = function (acceptType, fileName) {
-    if (acceptType && acceptType.length > 0) {
-        var type_1 = fileName.split('.').pop() || '';
-        if (acceptType.findIndex(function (item) { return item.toLowerCase() === type_1.toLowerCase(); }) < 0)
-            return false;
-    }
+var isAcceptTypeValid = function ( /* acceptType, fileName */) {
+    // if (acceptType && acceptType.length > 0) {
+    //   const type: string = fileName.split('.').pop() || '';
+    //   if (
+    //     acceptType.findIndex(
+    //       (item) => item.toLowerCase() === type.toLowerCase()
+    //     ) < 0
+    //   )
+    //     return false;
+    // } // убираем проверку на тип файла
     return true;
 };
 exports.isAcceptTypeValid = isAcceptTypeValid;
@@ -105,7 +109,9 @@ var isMaxNumberValid = function (totalNumber, maxNumber, keyUpdate) {
 };
 exports.isMaxNumberValid = isMaxNumberValid;
 var getErrorValidation = function (_a) {
-    var fileList = _a.fileList, value = _a.value, maxNumber = _a.maxNumber, keyUpdate = _a.keyUpdate, acceptType = _a.acceptType, maxFileSize = _a.maxFileSize, resolutionType = _a.resolutionType, resolutionWidth = _a.resolutionWidth, resolutionHeight = _a.resolutionHeight;
+    var fileList = _a.fileList, value = _a.value, maxNumber = _a.maxNumber, keyUpdate = _a.keyUpdate, 
+    // acceptType,
+    maxFileSize = _a.maxFileSize, resolutionType = _a.resolutionType, resolutionWidth = _a.resolutionWidth, resolutionHeight = _a.resolutionHeight;
     return __awaiter(void 0, void 0, void 0, function () {
         var newErrors, i, file, image, checkRes;
         return __generator(this, function (_b) {
@@ -127,7 +133,7 @@ var getErrorValidation = function (_a) {
                     //   newErrors.acceptType = true;
                     //   break;
                     // }
-                    if (!(0, exports.isAcceptTypeValid)(acceptType, file.name)) {
+                    if (!(0, exports.isAcceptTypeValid)( /* acceptType, file.name */)) {
                         newErrors.acceptType = true;
                         return [3 /*break*/, 5];
                     }
