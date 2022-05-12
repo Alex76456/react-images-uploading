@@ -40,7 +40,7 @@ export const isResolutionValid = (
 export const isImageValid = (/* fileType: string */) => {
   // if (fileType.includes('image')) {
   //  return true;
-  // }
+  // } // убираем проверку на картинку
   return true;
 };
 
@@ -49,15 +49,15 @@ export const isMaxFileSizeValid = (fileSize, maxFileSize?) => {
 };
 
 export const isAcceptTypeValid = (acceptType, fileName) => {
-  if (acceptType && acceptType.length > 0) {
-    const type: string = fileName.split('.').pop() || '';
-    if (
-      acceptType.findIndex(
-        (item) => item.toLowerCase() === type.toLowerCase()
-      ) < 0
-    )
-      return false;
-  }
+  // if (acceptType && acceptType.length > 0) {
+  //   const type: string = fileName.split('.').pop() || '';
+  //   if (
+  //     acceptType.findIndex(
+  //       (item) => item.toLowerCase() === type.toLowerCase()
+  //     ) < 0
+  //   )
+  //     return false;
+  // } // убираем проверку на тип файла
   return true;
 };
 
