@@ -84,11 +84,11 @@ var isMaxFileSizeValid = function (fileSize, maxFileSize) {
 };
 exports.isMaxFileSizeValid = isMaxFileSizeValid;
 var isAcceptTypeValid = function (acceptType, fileName) {
-   // if (acceptType && acceptType.length > 0) {
-      //  var type_1 = fileName.split('.').pop() || '';
-      //  if (acceptType.findIndex(function (item) { return item.toLowerCase() === type_1.toLowerCase(); }) < 0)
-      //      return false;
-    // }
+    if (acceptType && acceptType.length > 0) {
+        var type_1 = fileName.split('.').pop() || '';
+        if (acceptType.findIndex(function (item) { return item.toLowerCase() === type_1.toLowerCase(); }) < 0)
+            return false;
+    }
     return true;
 };
 exports.isAcceptTypeValid = isAcceptTypeValid;
